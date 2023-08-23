@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Registering{% endblock %}
+
+{% block content -%}
+    <div>
+        <input type="text" placeholder="Enter name" id="name">
+    </div>
+    <div>
+        <input type="text" placeholder="Enter surname" id="surname">
+    </div>
+    <div>
+        <input type="email" placeholder="Enter email" id="email">
+    </div>
+    <div>
+        <input type="password" placeholder="Enter password" id="password">
+    </div>
+    <div>
+        <input type="password" placeholder="Repeat password" id="repeat-password">
+    </div>
+    <div>
+        <input type="submit" placeholder="Enter" onclick="registering()">
+    </div>
+    <script src="../static/scripts/registering.js"></script>
+
+
+{%- endblock content %}

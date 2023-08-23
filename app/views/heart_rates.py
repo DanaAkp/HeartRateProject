@@ -17,7 +17,7 @@ class UserRequests(Resource):
         """Add new heart rate record by user id."""
         data = request.get_json()
         result = HeartRateService.add_heart_rate_record(
-            heart_rate=data.get('current_heart_rate'),
+            heart_rate=int(data.get('current_heart_rate')),
             user_id=current_user.id
         )
         return result

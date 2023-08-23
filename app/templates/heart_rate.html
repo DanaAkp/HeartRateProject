@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content -%}
+    <div>
+        <div>
+            <input type="number" placeholder="Enter your heart rate" id="heart_rate">
+        </div>
+        <div>
+            <input type="submit" placeholder="Add" onclick="add_heart_rate()">
+        </div>
+
+        <br>
+        <div>
+            <p type="text" id="last-hr" ></p>
+
+        </div>
+        <br>
+
+        <div>
+            <p type="text" id="result">
+        </div>
+        <script src="../static/scripts/main.js"></script>
+    </div>
+
+{%- endblock content %}

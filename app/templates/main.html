@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block content -%}
+    {% if not current_user.is_authenticated %}
+        <div>
+            <a href="{{ url_for('login_user') }}"> Login </a>
+        </div>
+        <div>
+            <a href="{{ url_for('registering') }}"> Registering </a>
+        </div>
+
+    {% else %}
+        <div><a href="{{ url_for('add_heart_rate_user') }}"> Add heart rate </a>
+        </div>
+        <div><input type="submit" onclick="logout_user()" value="Logout"/>
+        </div>
+    {% endif %}
+    <script src="../static/scripts/main.js"></script>
+
+
+{%- endblock content %}

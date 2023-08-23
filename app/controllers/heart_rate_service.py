@@ -11,12 +11,11 @@ class HeartRateService:
     @classmethod
     def get_average_heart_rate(cls, user_id: int) -> float:
         average_query = db.session.query(
-            func.sum(HeartRate.heart_rate).label('sum'),
-            func.count(HeartRate.heart_rate).label('count')
+            func.avg(HeartRate.heart_rate).label('avg'),
         ).filter(HeartRate.user_id == user_id) \
             .group_by(HeartRate.user_id).first()
 
-        average = average_query.sum / average_query.count
+        average = average_query.avg
         return average
 
     @classmethod
