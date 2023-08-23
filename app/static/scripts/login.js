@@ -2,7 +2,10 @@ function login_user() {
 
     let email = document.getElementById('email')
     let password = document.getElementById('password')
-
+    if (email.value === '' || password.value === '') {
+        alert('Please enter all fields.')
+        window.location.reload()
+    }
     const request = new XMLHttpRequest();
     request.open('POST', `/api/users/login`, true);
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');

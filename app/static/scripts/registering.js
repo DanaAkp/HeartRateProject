@@ -5,7 +5,10 @@ function registering() {
     let surname = document.getElementById('surname')
     let password = document.getElementById('password')
     let rep_password = document.getElementById('repeat-password')
-
+    if (email.value === '' || name.value === '' || surname.value === '' || password.value === '') {
+        alert('Please enter all fields.')
+        window.location.reload()
+    }
     if (password.value !== rep_password.value) {
         alert('Passwords mismatch.')
         window.location.reload()
